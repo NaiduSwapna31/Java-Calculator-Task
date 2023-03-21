@@ -1,0 +1,43 @@
+import java.util.InputMismatchException;
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+
+        int n=0,n1, n2, n3 ,num=0;
+        char op1 ,op2;
+        try{
+            Scanner calci = new Scanner(System.in);
+            n1  = calci.nextInt();
+            op1 = calci.next().charAt(0);
+            n2  = calci.nextInt();
+            op2 = calci.next().charAt(0);
+            n3  = calci.nextInt();
+
+            while(n1 > 0 && n1 <=10);
+            while(n2 > 0 && n2 <=10);
+            while(n3 > 0 && n3 <=10);
+
+            switch(op1){
+                case '+': n = n1+n2;break;
+                case '-': n = n1-n2;break;
+                case '*': n = n1*n2;break;
+                case '/': n = n1/n2;break;
+            }
+            switch(op2){
+                case '+': num = n+n3;break;
+                case '-': num = n-n3;break;
+                case '*': num = n*n3;break;
+                case '/': num = n/n3;break;
+            }
+            System.out.println(num);
+
+
+        }
+        catch(Exception e){
+            System.out.println("-------------!!!InputMismatchException occurred!!!------------ " + e.getMessage());
+        }
+
+
+    }
+
+}
